@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon"
+        href="https://www.talent-network.org/vacantes/wp-content/uploads/2021/03/tn2020-logo-lr-a.png"
+        type="image/x-icon">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
+
+    <style>
+        /**
+        * 4.-   
+        * **/
+        [data-value]:after {
+            content: " ("attr(data-value) ")";
+        }
+
+        /**
+        * 5.-   
+        * **/
+        ul {
+            display: grid;
+            grid-template-columns: repeat(20, 1fr);
+            grid-gap: 1px;
+            text-align: center;
+            list-style-type: none;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul>li {
+            background-color: white;
+            border: 1px solid black;
+        }
+
+        ul>li:nth-child(1) {
+            grid-column: span 5;
+        }
+
+        ul>li:nth-child(2) {
+            grid-column: span 12;
+        }
+
+        ul>li:nth-child(3) {
+            grid-column: span 3;
+        }
+
+        ul>li:nth-child(4) {
+            grid-column: span 20;
+        }
+
+        ul>li:nth-child(5) {
+            grid-column: span 10;
+        }
+
+        ul>li:nth-child(6) {
+            grid-column: span 10;
+        }
+
+        /**
+        * 6.-   
+        * **/
+        h1{
+            font-family: 'OpenSans';
+            font-size: 18px;
+            text-shadow: -2px 2px 1px rgba(0,0,0,.7)
+        }
+    </style>
+</head>
+
+<body>
+    <div style="height: 1000px; background-color: gold;"></div>
+    <ul>
+        <li data-value="orange">item1</li>
+        <li data-value="banana">item3</li>
+        <li data-value="apple">item2</li>
+        <li data-value="cherry">item4</li>
+        <li data-value="mango">item6</li>
+        <li data-value="plum">item8</li>
+    </ul>
+    <div id="info"></div>
+
+    <h1>Texto con H1 - 1</h1>
+    <h1>Texto con H1 - 2</h1>
+    <h1>Texto con H1 - 3</h1>
+    <script>
+        var countries = [
+            {
+                'country': 'India',
+                'inhabitants': 1398496000
+            },
+            {
+                'country': 'China',
+                'inhabitants': 1404959000
+            },
+            {
+                'country': 'Indonesia',
+                'inhabitants': 269856000
+            },
+            {
+                'country': 'Estados Unidos',
+                'inhabitants': 330641000
+            }
+        ];
+
+        /**
+        * 1.-   
+        * **/
+        countries.sort((a, b) => (a.inhabitants > b.inhabitants) ? 1 : -1)
+        const ol = document.createElement('ol');
+        document.getElementById('info').appendChild(ol);
+
+        countries.forEach(function callback(currentValue, index, array) {
+            var li = document.createElement('li');
+            li.innerHTML = currentValue.country + " [ " + currentValue.inhabitants + " ]";
+            ol.appendChild(li);
+        });
+
+        /**
+         * 2.-   
+         * **/
+        var fruits = Array.from(document.getElementsByTagName("li")).slice(0, 2);
+        fruits.forEach(function callback(currentValue, index, array) {
+            fruits[index] = {
+                'item': fruits[index].innerHTML,
+                'value': fruits[index].dataset.value
+            }
+        });
+
+        const newArray2ndQ = countries.slice(0, 2).concat(fruits);
+        console.log(newArray2ndQ);
+
+        /**
+         * 3.-   
+         * **/
+        document.getElementById("info").scrollIntoView(true);
+
+    </script>
+</body>
+
+</html>

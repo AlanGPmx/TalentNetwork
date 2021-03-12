@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Alan Garduño Pineda">
+    <title>Maquetación - Por Alan Garduño</title>
+    <link rel="shortcut icon"
+        href="https://www.talent-network.org/vacantes/wp-content/uploads/2021/03/tn2020-logo-lr-a.png"
+        type="image/x-icon">
+    <style>
+        *,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            grid-gap: 0px;
+            flex-direction: column;
+        }
+
+        .col-1 {
+            grid-column: span 1;
+        }
+
+        .col-2 {
+            grid-column: span 2;
+        }
+
+        .col-3 {
+            grid-column: span 3;
+        }
+
+        .col-4 {
+            grid-column: span 4;
+        }
+
+        .col-5 {
+            grid-column: span 5;
+        }
+
+        .col-6 {
+            grid-column: span 6;
+        }
+
+        .col-7 {
+            grid-column: span 7;
+        }
+
+        .col-8 {
+            grid-column: span 8;
+        }
+
+        .col-9 {
+            grid-column: span 9;
+        }
+
+        .col-10 {
+            grid-column: span 10;
+        }
+
+        header {
+            background-color: red;
+            color: white;
+            width: 100%;
+            height: 75px;
+            position: fixed;
+            z-index: 9999;
+        }
+
+        .section1 {
+            background-color: green;
+            color: white;
+            width: 100%;
+            height: 100vh;
+            padding-top: 80px;
+        }
+
+        .sectionPost {
+            background-color: ghostwhite;
+            width: 80%;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .sectionPublicity {
+            background-color: ghostwhite;
+            width: 20%;
+        }
+
+        .postsPanels {
+            color: white;
+            min-height: 400px;
+            margin: 15px;
+            padding: 10px;
+            border-radius: 20px;
+        }
+
+        .postsPanels:nth-child(1) {
+            background-color: red;
+        }
+
+        .postsPanels:nth-child(2) {
+            background-color: blue;
+        }
+
+        .postsPanels:nth-child(3) {
+            background-color: green;
+        }
+
+        .postsPanels:nth-child(4) {
+            background-color: yellow;
+            color: black;
+        }
+
+        .publicityPanel {
+            background-color: gray;
+            height: 300px;
+            margin: 80px 20px 20px 20px;
+            padding: 10px;
+            border-radius: 20px;
+        }
+
+        .section2 {
+            width: 100%;
+            color: white;
+        }
+
+        .section2:nth-child(1) {
+            background-color: green;
+            height: 400px;
+        }
+
+        .section2:nth-child(2) {
+            background-color: blue;
+            height: 300px;
+        }
+
+        .wrapped {
+            align-items: flex-start;
+        }
+
+        .rightPanel {
+            position: sticky;
+            top: 0;
+        }
+
+        /**
+        * Breakpoints 
+        * **/
+        @media (max-width: 767px) {
+
+            .col-2,
+            .col-8 {
+                margin: 0px !important;
+                grid-column: span 10 !important;
+            }
+
+            .reverse>div {
+                display: block;
+                -webkit-transform: scaleY(-1);
+                transform: scaleY(-1);
+            }
+
+            .reverse>div>div {
+                -webkit-transform: scaleY(-1);
+                transform: scaleY(-1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        100% x 75px
+    </header>
+    <div class="section1">
+        100% x alto de ventana
+    </div>
+
+    <div class="row wrapped reverse">
+        <div class="col-8 leftPanel">
+            <div class="postsPanels">
+                Post 1: 80% x al menos 400px de alto
+            </div>
+            <div class="postsPanels">
+                Post 2: 80% x al menos 400px de alto
+            </div>
+            <div class="postsPanels">
+                Post 3: 80% x al menos 400px de alto
+            </div>
+            <div class="postsPanels">
+                Post 4: 80% x al menos 400px de alto
+            </div>
+        </div>
+        <div class="col-2 rightPanel">
+            <div class="publicityPanel">
+                20% x 300px
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-10 section2">
+            100% x 400px
+        </div>
+        <div class="col-10 section2">
+            100% x 300px
+        </div>
+    </div>
+
+</body>
+
+</html>
